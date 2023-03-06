@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Pricing component with toggle
+  </title>
+</head>
+
+<body>
+
+  <main>
+    <section class="title">
+      <h1>Our Pricing</h1>
+      <div class="toggler">
+        <span>Annually</span>
+        <div class="pricing-toggle">
+          <div class="toggle-button active"></div>
+        </div>
+        <span>Monthly</span>
+
+      </div>
+    </section>
+    <section class="pricing">
+      <div class="card">
+        <h2>Basic</h2>
+        <h1 class="price-1"><span>$</span>19.99</h1>
+        <p> 500 GB Storage</p>
+        <p>2 Users Allowed</p>
+        <p>Send up to 3 GB</p>
+        <button>LEARN MORE</button>
+      </div>
+      <div class="card active">
+        <h2>Professional</h2>
+        <h1 class="price-2"><span>$</span>24.99</h1>
+        <p>1 TB Storage</p>
+        <p>5 Users Allowed</p>
+        <p>Send up to 10 GB</p>
+        <button class="active-button">LEARN MORE</button>
+      </div>
+      <div class="card">
+        <h2>Master</h2>
+        <h1 class="price-3"><span>$</span>24.99</h1>
+        <p>2 TB Storage</p>
+        <p>10 Users Allowed</p>
+        <p>Send up to 20 GB</p>
+        <button>LEARN MORE</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

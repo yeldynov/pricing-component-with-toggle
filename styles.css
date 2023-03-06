@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --gradient1: hsl(236, 72%, 79%);
+  --gradient2: hsl(237, 63%, 64%);
+
+  --very-light-grayish-blue: hsl(240, 78%, 98%);
+  --light-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+body {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--very-light-grayish-blue);
+  background-image: url('/images/bg-top.svg'), url('/images/bg-bottom.svg');
+  background-repeat: no-repeat;
+  background-position: top right, bottom left;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.title {
+  color: var(--grayish-blue);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title h1 {
+  font-size: 1.8rem;
+}
+
+/* Toggler */
+.toggler {
+  display: flex;
+  align-items: center;
+  color: var(--light-grayish-blue);
+}
+.pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.toggle-button {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--gradient1),
+    var(--gradient2)
+  );
+  border-radius: 30px;
+  position: relative;
+}
+
+.toggle-button:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-button:after {
+  /* content: 'Monthly'; */
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  font-size: 14px;
+  color: #666;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-button.active:before {
+  transform: translateX(30px);
+}
+
+.toggle-button.active:after {
+  left: 10px;
+  /* content: "Annual"; */
+  color: #fff;
+}
+/* end toggler */
+
+.pricing {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  color: var(--dark-grayish-blue);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 280px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.active {
+  color: white;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--gradient1),
+    var(--gradient2)
+  );
+  scale: 1.1;
+}
+
+.card h1 {
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding-bottom: 20px;
+}
+.card h1 span {
+  font-size: 2.2rem;
+}
+.card h2 {
+  font-size: 1.3rem;
+}
+.card p {
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding-bottom: 15px;
+}
+.card button {
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--gradient1),
+    var(--gradient2)
+  );
+  color: white;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.card button:hover {
+  background: transparent;
+  border: 1px solid var(--gradient2);
+  color: var(--gradient2);
+}
+
+.card.active > button {
+  background-color: white;
+  background-image: none;
+  color: var(--gradient2);
+}
+.card.active > button:hover {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .pricing {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .active {
+    scale: 1;
+  }
+}
